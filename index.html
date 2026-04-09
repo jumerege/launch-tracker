@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Tracker - Live Space Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🚀 Launch Tracker</h1>
+            <p>Real-time Rocket Launch Monitor</p>
+        </header>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="refreshBtn" class="btn btn-primary">🔄 Refresh Data</button>
+            <div class="loading" id="loading" style="display: none;">
+                <span>Loading...</span>
+            </div>
+        </div>
+
+        <!-- Next Launch Highlight -->
+        <div class="next-launch-container">
+            <h2>⏱️ Next Launch</h2>
+            <div class="next-launch-card" id="nextLaunch">
+                <div class="placeholder">Loading next launch...</div>
+            </div>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="days">0</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="hours">0</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="minutes">0</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="seconds">0</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Launches List -->
+        <div class="launches-container">
+            <h2>📡 Upcoming Launches</h2>
+            <div class="launches-grid" id="launchesList">
+                <div class="placeholder">Loading launches...</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Data from RocketLaunch.Live API | Last Updated: <span id="lastUpdated">--:--</span></p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
