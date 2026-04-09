@@ -57,6 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load data
     loadLaunches();
     
+    // Setup countdown - START IMMEDIATELY
+    updateCountdown();
+    
     // Setup refresh
     setInterval(loadLaunches, 60000); // Refresh every minute
     setInterval(updateCountdown, 1000); // Update countdown every second
@@ -107,6 +110,7 @@ function render() {
     nextLaunch = allLaunches[0] || null;
     renderNextLaunch();
     renderList();
+    updateCountdown(); // Call immediately to show countdown
     updateLastUpdate();
     
     const loading = document.getElementById('loading');
