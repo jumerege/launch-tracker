@@ -195,11 +195,15 @@ function renderList() {
 
 // Update countdown
 function updateCountdown() {
-    if (!nextLaunch) return;
+    if (!nextLaunch) {
+        console.log('⚠️ updateCountdown: nextLaunch is null');
+        return;
+    }
     
     const now = new Date().getTime();
     const launch = nextLaunch.date.getTime();
     const diff = launch - now;
+    console.log('📊 Countdown update:', { nextLaunch: nextLaunch.name, diff, now, launch });
     
     if (diff <= 0) {
         document.getElementById('days').textContent = '0';
