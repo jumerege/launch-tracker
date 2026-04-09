@@ -88,7 +88,7 @@ function loadLaunches() {
     })
     .catch(error => {
         console.warn('⚠️ Using sample data:', error);
-        allLaunches = JSON.parse(JSON.stringify(sampleLaunches));
+        allLaunches = sampleLaunches.map(l => ({...l})); // Shallow copy to preserve Date objects
         render();
     });
 }
